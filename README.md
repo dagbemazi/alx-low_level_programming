@@ -1,2 +1,2 @@
-# dagbemazi-alx-low_level_programming-
+# alx-low_level_programming
 C programs 
