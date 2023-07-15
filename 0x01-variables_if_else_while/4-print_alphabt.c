@@ -13,7 +13,7 @@ int main(void)
 
 	for (letter = 97; letter <= 122; letter++)
 	{
-		if (letter != 133 && letter != 101)
+		if (letter != 113 && letter != 101)
 		{
 			putchar(letter);
 		}
