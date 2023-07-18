@@ -1,6 +1,18 @@
 #include <stdio.h>
 
 /**
+  * main - entry point
+  * Return: always (0) success
+  */
+int main(void)
+{
+	print_to_98(100);
+	print_to_98(0);
+	print_to_98(98);
+	return (0);
+}
+
+/**
   * print_to_98 - Print numbers up to 98
   * @n: number to print from
   */
@@ -31,14 +43,3 @@ void print_to_98(int n)
 	printf("\n");
 }
 
-/**
-  * main - entry point
-  * Return: always (0) success
-  */
-int main(void)
-{
-	print_to_98(100);
-	print_to_98(0);
-	print_to_98(98);
-	return (0);
-}
