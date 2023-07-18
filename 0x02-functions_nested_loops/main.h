@@ -9,16 +9,5 @@
   * Return: void
   */
 
-void _putchar(void)
-{
-	char text[] = "_putchar";
-	int i;
-
-	for (i = 0; text[i] != '\0'; i++)
-	{
-		putchar(text[i]);
-	}
-	putchar(10);
-}
-
+int _putchar(char c);
 #endif
