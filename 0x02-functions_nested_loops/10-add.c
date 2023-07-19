@@ -2,7 +2,8 @@
 
 /**
   * add - add two values
-  * @a @b: values to add
+  * @a: values to add
+  * @b: second value to dd
   * Return: sum of values
   */
 
