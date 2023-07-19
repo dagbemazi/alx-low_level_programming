@@ -10,7 +10,7 @@ void print_alphabet_x10(void)
 
 	total = 10;
 
-	for (times = 0; times <= total; times++)
+	for (times = 0; times < total; times++)
 	{
 		int letters;
 
