@@ -30,12 +30,12 @@ void times_table(void)
 				printf("%2d", product);
 			}
 
-			if ( multiple != 9)
+			if (multiple != 9)
 			{
 				printf(", ");
 			}
 		}
-		
+
 		printf("\n");
 	}
 }
