@@ -22,11 +22,11 @@ void times_table(void)
 
 			if (multiple != multiplier)
 			{
-				printf("%d, ", product);
+				printf("%2d, ", product);
 			}
 			else
 			{
-				printf("%d", product);
+				printf("%2d", product);
 			}
 		}
 		printf("\n");
