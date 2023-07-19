@@ -1,20 +1,16 @@
+#include <stdio.h>
+
 /**
   * add - add two values
   * @a @b: values to add
   * Return: sum of values
   */
 
-
-
-
-
-
-
-int main(void)
+int add(int a, int b)
 {
-    int n;
+	int result;
 
-    n = add(89, 9);
-    printf("%d\n", n);
-    return (0);
+	result = a + b;
+
+	return (result);
 }
