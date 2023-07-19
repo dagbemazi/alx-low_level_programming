@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 /**
   * print_sign - check sign of number
   * @n: character to check against
@@ -9,7 +9,7 @@ int print_sign(int n)
 {
 	if (n > 0)
 	{
-		_putchar('43');
+		printf("+, ");
 		return (1);
 	} else if (n == 0)
 	{
