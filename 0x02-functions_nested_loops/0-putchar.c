@@ -6,7 +6,7 @@
   *
   */
 
-int main(void)
+int (void)
 {
 	char text[] = "_putchar\n";
 	int i;
