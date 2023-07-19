@@ -14,7 +14,7 @@ void print_times_table(int n)
 
 	multiplier = n;
 
-	if (multiplier <= 15 && multiplier > 0)
+	if (multiplier <= 15 && multiplier >= 0)
 	{
 
 		for (loop = 0; loop <= multiplier; loop++)
