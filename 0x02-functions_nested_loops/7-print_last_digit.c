@@ -13,6 +13,6 @@ int print_last_digit(int k)
 	int last_digit, return_val;
 
 	last_digit = k % 10;
-	return_val = '0' + r;
+	return_val = '0' + last_digit;
 	return (return_val);
 }
