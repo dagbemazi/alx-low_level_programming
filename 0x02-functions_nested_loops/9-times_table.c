@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
   * times_table - print 9 times table
@@ -20,14 +21,21 @@ void times_table(void)
 
 			product = loop * multiple;
 
-			if (multiple != multiplier)
+			if (multiple == 0)
 			{
-				printf("%2d, ", product);
+				printf("%d", product);
 			}
 			else
 			{
 				printf("%2d", product);
 			}
+
+			if ( multiple != 9)
+			{
+				printf(", ");
+			}
 		}
+		
+		printf("\n");
 	}
 }
