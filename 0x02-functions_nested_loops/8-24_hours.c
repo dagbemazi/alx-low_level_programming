@@ -15,14 +15,14 @@ void jack_bauer(void)
 
 	for (i = 0; i <= t_hours; i++)
 	{
-		for (j = i + 1; j <= t_min; j++)
+		for (j = 0; j <= t_min; j++)
 		{
 			first_hr = i / 10;
 			second_hr = i % 10;
 			first_min = j / 10;
 			second_min = j % 10;
 
-			printf("%d%d:%d%d\n", first_hr, second_hr, first_min,second_min);
+			printf("%d%d:%d%d\n", first_hr, second_hr, first_min, second_min);
 		}
 	}
 }
