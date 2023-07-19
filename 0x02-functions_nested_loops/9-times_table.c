@@ -12,7 +12,7 @@ void times_table(void)
 
 	multiplier = 9;
 
-	for (loop = 0; loop < multiplier; loop++)
+	for (loop = 0; loop <= multiplier; loop++)
 	{
 		for (multiple = 0; multiple <= 9; multiple++)
 		{
