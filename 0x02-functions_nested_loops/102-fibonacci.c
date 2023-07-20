@@ -6,7 +6,7 @@
   * Return: fibonnaci value
   */
 
-int fib(unsigned long n)
+unsigned long fib(unsigned int  n)
 {
 	if (n == 0)
 	{
@@ -30,7 +30,7 @@ int fib(unsigned long n)
 
 int main(void)
 {
-	int i;
+	unsigned int i;
 
 	printf("%d, ", 1);
 
