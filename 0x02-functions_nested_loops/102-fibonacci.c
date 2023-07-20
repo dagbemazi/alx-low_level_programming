@@ -34,7 +34,7 @@ int main(void)
 
 	printf("%d, ", 1);
 
-	for (i = 0; i <= 50; i++)
+	for (i = 1; i <= 51; i++)
 	{
 		int res;
 
@@ -43,7 +43,7 @@ int main(void)
 		{
 			printf("%d", res);
 
-			if (i != 10)
+			if (i != 51)
 			{
 				printf(", ");
 			}
