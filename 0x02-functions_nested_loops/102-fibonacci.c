@@ -6,7 +6,7 @@
   * Return: fibonnaci value
   */
 
-int fib(unsigned long long n)
+int fib(unsigned long n)
 {
 	if (n == 0)
 	{
@@ -36,12 +36,12 @@ int main(void)
 
 	for (i = 1; i <= 51; i++)
 	{
-		unsigned long long res;
+		unsigned long res;
 
 		res = fib(i);
 		if (res != 1 && res != 0)
 		{
-			printf("%llu", res);
+			printf("%lu", res);
 
 			if (i != 51)
 			{
