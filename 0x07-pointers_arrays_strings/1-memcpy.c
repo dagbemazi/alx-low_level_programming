@@ -1,6 +1,6 @@
 /**
   * _memcpy - copies buffer to memory area
-  * @dest: pointer to destination 
+  * @dest: pointer to destination
   * @src: pointer to bytes to be copied
   * @n: number of bytes
   * Return: pointer to dest
