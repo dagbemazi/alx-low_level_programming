@@ -1,14 +1,19 @@
 /**
-  * _strlen - find length of string
+  * _str_len - find length of string
   * @s: input string
   * Return: length
   */
 
-int _strlen(char *s)
+int _str_len(char *s)
 {
 	int length;
 
-	length = strlen(s);
+	length = 0;
+
+	while (s[length] != '\0')
+	{
+		length++;
+	}
 
 	return (length);
 }
@@ -24,9 +29,10 @@ int _strlen(char *s)
 
 char *_strchr(char *s, char c)
 {
-	int len, *p;
+	int i, len;
+	char *p;
 
-	len = _strlen(s);
+	len = _str_len(s);
 
 	for (i = 0; i < len && s[i] != '\0'; i++)
 	{
@@ -43,6 +49,6 @@ char *_strchr(char *s, char c)
 	}
 	else
 	{
-		return (NULL);
+		return (0);
 	}
 }
