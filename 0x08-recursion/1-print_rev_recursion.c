@@ -1,6 +1,7 @@
 #include "main.h"
 /**
-  * _print_rev_recursion - recursively prints a character.
+  * _print_rev_recursion - recursively prints a character
+  * in reverse.
   * @s: pointer to input
   * Return: Nothing.
   */
@@ -16,7 +17,7 @@ void _print_rev_recursion(char *s)
 	else
 	{
 		i++;
-		_puts_recursion(&s[i]);
+		_print_rev_recursion(&s[i]);
 		_putchar(s[i]);
 	}
 }
