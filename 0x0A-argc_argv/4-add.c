@@ -11,27 +11,25 @@
 
 int _atoi(char *s)
 {
-    unsigned int result, sign, finalRes;
+	unsigned int result, sign, finalRes;
 
-    sign = 1;
-    result = 0;
+	sign = 1;
+	result = 0;
+	do {
+		if (*s == '-')
+		{
+			sign *= -1;
+		}
+		else if (*s >= '0' && *s <= '9')
+		{
+			result = (result * 10) + (*s - '0');
+		}
+		else if (result > 0)
+			break;
+	} while (*s++);
+	finalRes = result * sign;
 
-    do {
-        if (*s == '-')
-        {
-            sign *= -1;
-        }
-        else if (*s >= '0' && *s <= '9')
-        {
-            result = (result * 10) + (*s - '0');
-        }
-        else if (result > 0)
-            break;
-    } while (*s++);
-
-    finalRes = result * sign;
-
-    return (finalRes);
+	return (finalRes);
 }
 
 
