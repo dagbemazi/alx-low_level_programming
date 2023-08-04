@@ -1,5 +1,39 @@
 #include <stdio.h>
+
+#include "main.h"
 #include <stdlib.h>
+
+/**
+  * _atoi - convert a string to integer.
+  * @s: input string
+  * Return: integer converted number
+  */
+
+int _atoi(char *s)
+{
+    unsigned int result, sign, finalRes;
+
+    sign = 1;
+    result = 0;
+
+    do {
+        if (*s == '-')
+        {
+            sign *= -1;
+        }
+        else if (*s >= '0' && *s <= '9')
+        {
+            result = (result * 10) + (*s - '0');
+        }
+        else if (result > 0)
+            break;
+    } while (*s++);
+
+    finalRes = result * sign;
+
+    return (finalRes);
+}
+
 
 /**
   * main - entry point.
@@ -19,14 +53,14 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!atoi(argv[i]))
+			if (!(_atoi(argv[i])))
 			{
 				printf("Error\n");
 				return (1);
 			}
 			else
 			{
-				sum += atoi(argv[i]);
+				sum += _atoi(argv[i]);
 			}
 		}
 
