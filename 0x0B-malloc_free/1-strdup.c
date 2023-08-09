@@ -35,12 +35,10 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 	{
-		memsize = 1;
+		return (0);
 	}
-	else
-	{
-		memsize = _strlen(str) + 1;
-	}
+
+	memsize = _strlen(str) + 1;
 
 	ptr = malloc(memsize);
 
