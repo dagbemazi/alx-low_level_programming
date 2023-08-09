@@ -1,6 +1,26 @@
 #include <stdlib.h>
 
 /**
+  * _strlen - find the length of the string
+  * @text: string to find length for
+  * Return: length of string
+  */
+
+int _strlen(char *text)
+{
+	int length;
+
+	length = 0;
+
+	while (text[length] != '\0')
+	{
+		length++;
+	}
+
+	return (length);
+}
+
+/**
   * _strdup - return a pointer to newly allocated memory
   *            pointing to a copy of string given in params.
   * @str: given string.
@@ -11,7 +31,16 @@
 char *_strdup(char *str)
 {
 	char *ptr;
-	int i, memsize = sizeof(str);
+	int i, memsize;
+
+	if (str == NULL)
+	{
+		memsize = 1;
+	}
+	else
+	{
+		memsize = _strlen(str) + 1;
+	}
 
 	ptr = malloc(memsize);
 
