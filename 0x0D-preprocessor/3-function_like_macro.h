@@ -3,6 +3,15 @@
 
 #include <stdlib.h>
 
-#define ABS(x) abs((x))
+#define ABS(x) ({ \
+		if (x == NULL) \
+		{ \
+		  0; \
+		} \
+		else \
+		{ \
+		  abs((x)); \
+		} \
+	})
 
 #endif
