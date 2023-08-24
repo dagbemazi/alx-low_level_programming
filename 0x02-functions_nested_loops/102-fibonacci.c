@@ -6,22 +6,21 @@
   * Return: fibonnaci value
   */
 
-unsigned long fib(unsigned int  n)
+int fib(int  n)
 {
-	if (n == 0)
-	{
-		return (0);
-	}
-	else if (n == 1)
-	{
-		return (1);
-	}
-	else
-	{
-		return (fib(n - 1) + fib(n - 2));
-	}
-}
+	int seq[n];
+	int i;
 
+	seq[0] = 1;
+	seq[1] = 2;
+
+	for (i = 0; i < n; i++)
+	{
+		seq[i] = seq[i - 1] + seq[i - 2];
+	}
+
+	return (seq[n]);
+}
 /**
   * main - call fib function and print sequence
   *
@@ -30,18 +29,18 @@ unsigned long fib(unsigned int  n)
 
 int main(void)
 {
-	unsigned int i;
+	int i;
 
 	printf("%d, ", 1);
 
 	for (i = 1; i <= 51; i++)
 	{
-		unsigned long res;
+		int res;
 
 		res = fib(i);
 		if (res != 1 && res != 0)
 		{
-			printf("%lu", res);
+			printf("%d", res);
 
 			if (i != 51)
 			{

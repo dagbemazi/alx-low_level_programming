@@ -1,1 +1,0 @@
-Variadics are beautiful
