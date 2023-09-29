@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
   * main - entry point.
@@ -12,6 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int i, sum;
+	char *endptr;
 
 	sum = 0;
 
@@ -19,7 +21,11 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!(atoi(argv[i])))
+			long num = strtol(argv[i], &endptr, 10);
+
+			/* Check if strtol encountered errors */
+
+			if (*endptr != '\0' || num > INT_MAX || num < INT_MIN)
 			{
 				printf("Error\n");
 				return (1);
