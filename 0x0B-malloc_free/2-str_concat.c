@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 int _strlen(char *text);
-
+char *_strcpy(char *dest, char *src);
 /**
   * str_concat - a function that concatenates two strings
   * @s1: string 1 pointer
@@ -12,7 +12,7 @@ int _strlen(char *text);
 
 char *str_concat(char *s1, char *s2)
 {
-	int len1, len2, memsize, t, i;
+	int len1, len2, memsize, t;
 	char *ptr;
 
 	if (s1 == NULL)
@@ -23,22 +23,20 @@ char *str_concat(char *s1, char *s2)
 
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
-	memsize = len1 + len2 - 1;
+	memsize = len1 + len2 + 1;
 
 	ptr = (char *)malloc(memsize);
 
 	if (ptr == NULL)
+	{
 		return (0);
-
-	for (i = 0; i < len1; i++)
-	{
-		if (s1[i] != '\0')
-			ptr[i] = s1[i];
 	}
-
-	for (t = len1; t <= memsize; t++)
+	else
 	{
-		ptr[t] = s2[t - len1];
+		_strcpy(ptr, s1);
+
+		for (t = len1; t <= memsize; t++)
+			ptr[t] = s2[t - len1];
 	}
 
 	return (ptr);
@@ -62,4 +60,22 @@ int _strlen(char *text)
 	}
 
 	return (length);
+}
+
+/**
+  * _strcpy - copies the content of a string to dest
+  * @dest: pointer to destination address to copy string to
+  * @src: pointer to string being copied
+  * Return: pointer to dest
+  */
+char *_strcpy(char *dest, char *src)
+{
+	int len = _strlen(src);
+	int i;
+
+	for (i = 0; i < len; i++)
+		dest[i] = src[i];
+	dest[len] = '\0';
+
+	return (dest);
 }
