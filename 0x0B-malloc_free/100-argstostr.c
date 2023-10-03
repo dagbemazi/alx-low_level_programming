@@ -2,7 +2,6 @@
 
 int _strlen(char *text);
 char *_strcpy(char *dest, char *src);
-char *str_concat(char *s1, char *s2);
 
 /**
   * argstostr - concatenates all arguments of a program
@@ -15,9 +14,9 @@ char *str_concat(char *s1, char *s2);
 char *argstostr(int ac, char **av)
 {
 	int i, len;
-	char *res;
+	char *res, *temp;
 
-	if (ac == 0 || **av == 0)
+	if (ac == 0 || av == 0)
 	{
 		return (0);
 	}
@@ -25,10 +24,10 @@ char *argstostr(int ac, char **av)
 	{
 		for (i = 0; i < ac; i++)
 		{
-			len += _strlen(av[i]);
+			len += _strlen(av[i]) + 1;
 		}
 
-		res = malloc(sizeof(char) * len + ac);
+		res = malloc(len);
 
 		if (res == NULL)
 		{
@@ -36,55 +35,21 @@ char *argstostr(int ac, char **av)
 		}
 		else
 		{
+			temp = res;
+
 			for (i = 0; i < ac; i++)
 			{
-				str_concat(res, av[i]);
-				str_concat(res, "\n");
+				_strcpy(temp, av[i]);
+				temp += _strlen(av[i]);
+				*temp = '\n';
+				temp++;
 			}
+
+			temp += '\0';
 		}
 	}
 
 	return (res);
-}
-
-/**
-  * str_concat - a function that concatenates two strings
-  * @s1: string 1 pointer
-  * @s2 : pointer to input string 2.
-  * Return: Null on failure and pointer to  newly allocated memory
-  *         containing concatenated strings of @s1 and @s2.
-  */
-
-char *str_concat(char *s1, char *s2)
-{
-	int len1, len2, memsize, t;
-	char *ptr;
-
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-	memsize = len1 + len2 + 1;
-
-	ptr = (char *)malloc(memsize);
-
-	if (ptr == NULL)
-	{
-		return (0);
-	}
-	else
-	{
-		_strcpy(ptr, s1);
-
-		for (t = len1; t <= memsize; t++)
-			ptr[t] = s2[t - len1];
-	}
-
-	return (ptr);
 }
 
 /**
