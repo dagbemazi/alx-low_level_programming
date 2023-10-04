@@ -13,7 +13,7 @@ char *_strcpy(char *dest, char *src);
 
 char *argstostr(int ac, char **av)
 {
-	int i, len;
+	int i, j, len;
 	char *res, *temp;
 
 	if (ac == 0 || av == 0)
@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 			len += _strlen(av[i]);
 		}
 
-		res = malloc(sizeof(char) * (len + ac - 1));
+		res = (char *)malloc(sizeof(char) * (len + ac + 1));
 
 		if (res == NULL)
 		{
@@ -39,8 +39,11 @@ char *argstostr(int ac, char **av)
 
 			for (i = 0; i < ac; i++)
 			{
-				_strcpy(temp, av[i]);
-				temp += _strlen(av[i]);
+				for (j = 0; av[i][j]; j++)
+				{
+					*temp = av[i][j];
+					temp++;
+				}
 				*temp = '\n';
 				temp++;
 			}
