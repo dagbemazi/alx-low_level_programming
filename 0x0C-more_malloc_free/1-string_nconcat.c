@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		memsize = len1 + n;
+		memsize = len1 + n + 1;
 	}
 
 	ptr = (char *)malloc(memsize);
