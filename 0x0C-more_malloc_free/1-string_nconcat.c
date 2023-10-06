@@ -5,7 +5,8 @@ char *_strcpy(char *dest, char *src);
 /**
   * string_nconcat - a function that concatenates two strings
   * @s1: string 1 pointer
-  * @s2 : pointer to input string 2.
+  * @s2: pointer to input string 2.
+  * @n: number of bytes to copy
   * Return: Null on failure and pointer to  newly allocated memory
   *         containing concatenated strings of @s1 and @s2.
   */
