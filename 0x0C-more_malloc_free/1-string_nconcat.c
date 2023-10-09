@@ -48,6 +48,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			ptr[t] = s2[t - len1];
 	}
 
+	ptr[memsize] = '\0';
+
 	return (ptr);
 }
 
@@ -84,7 +86,6 @@ char *_strcpy(char *dest, char *src)
 
 	for (i = 0; i < len; i++)
 		dest[i] = src[i];
-	dest[len] = '\0';
 
 	return (dest);
 }
