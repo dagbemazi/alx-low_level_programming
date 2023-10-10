@@ -5,7 +5,7 @@
   * _strlen - find the length of the string
   * @text: string to find length for
   * Return: length of string
-  */
+  
 
 int _strlen(char *text)
 {
@@ -21,6 +21,8 @@ int _strlen(char *text)
 	return (length);
 }
 
+*/
+
 /**
   * new_dog - function pointer that creates new dog
   * @name: dog name
@@ -31,21 +33,16 @@ int _strlen(char *text)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int namelen, ownerlen;
+	dog_t *dog;
 
-	char *name_cpy, *owner_cpy;
+	dog = malloc(sizeof(struct dog));
 
-	namelen = _strlen(name);
-	ownerlen = _strlen(owner);
+	if (dog == NULL)
+		return (NULL);
 
-	name_cpy = malloc(namelen + 1 * sizeof *name_cpy);
-	owner_cpy = malloc(ownerlen + 1 * sizeof *owner_cpy);
+	dog->name = name;
+	dog->age = age;
+	dog->owner = owner;
 
-	name_cpy = name;
-	owner_cpy = owner;
-
-	if (name_cpy == NULL || owner_cpy == NULL)
-	{
-		return (0);
-	}
+	return (dog);
 }
