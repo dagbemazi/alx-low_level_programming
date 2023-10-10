@@ -2,28 +2,6 @@
 #include "dog.h"
 
 /**
-  * _strlen - find the length of the string
-  * @text: string to find length for
-  * Return: length of string
-  
-
-int _strlen(char *text)
-{
-	int length;
-
-	length = 0;
-
-	while (text[length] != '\0')
-	{
-		length++;
-	}
-
-	return (length);
-}
-
-*/
-
-/**
   * new_dog - function pointer that creates new dog
   * @name: dog name
   * @age: age of dog
