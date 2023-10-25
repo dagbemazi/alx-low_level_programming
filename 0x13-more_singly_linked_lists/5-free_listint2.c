@@ -12,6 +12,7 @@ void free_listint2(listint_t **head)
 	listint_t *current, *temporal;
 
 	if (*head == NULL)
+		print("Freed!");
 		return;
 
 	current = *head;
