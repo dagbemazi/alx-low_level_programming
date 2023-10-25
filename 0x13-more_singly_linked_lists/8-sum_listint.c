@@ -3,7 +3,7 @@
 /**
   * sum_listint - compute sum of all data(n) of a list
   * @head: pointer to head
-  * Return: 0 if list is empty else sum 
+  * Return: 0 if list is empty else sum
   */
 
 int sum_listint(listint_t *head)
