@@ -29,9 +29,17 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	}
 
 	for (i = 0; i < index - 1; i++)
+	{
+		if (store_node == NULL || store_node->next == NULL)
+			return (-1);
+
 		store_node = store_node->next;
+	}
 
 	temp = store_node->next;
+	if (temp == NULL)
+		return (-1);
+
 	store_node->next = temp->next;
 	free(temp);
 
