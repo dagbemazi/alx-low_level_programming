@@ -1,7 +1,6 @@
 #include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int _strlen(char *s);
 
@@ -15,9 +14,11 @@ int _strlen(char *s);
 
 int create_file(const char *filename, char *text_content)
 {
-	int file_descriptor, mode, buf_size;
+	int file_descriptor, mode, buf_size, bytes_written;
 
-	mode = O_WRONLY | O_CREAT | O_TRUNC;
+	buf_size = _strlen(text_content);
+
+	mode = O_CREAT | O_RDWR | O_TRUNC;
 
 	if (filename == NULL)
 		return (-1);
@@ -25,20 +26,19 @@ int create_file(const char *filename, char *text_content)
 	file_descriptor = open(filename, mode, 0600);
 
 	if (file_descriptor == -1)
-	{
 		return (-1);
-	}
-	else
-	{
-		if (text_content == NULL)
-			text_content = "";
 
-		buf_size = _strlen(text_content);
+	if (text_content == NULL)
+		text_content = "";
 
-		write(file_descriptor, text_content, buf_size);
-	}
+	bytes_written = write(file_descriptor, text_content, buf_size);
 
-	return (0);
+	if (bytes_written == -1)
+		return (-1);
+
+	close(file_descriptor);
+
+	return (1);
 }
 
 
